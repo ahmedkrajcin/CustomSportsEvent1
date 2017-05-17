@@ -33,6 +33,7 @@ namespace CustomSportsEvent1.Models
         public dynamic getSingleTeam(int id)
         {
             // Query the database and retrieve the item with the passed id. After that, take the data and create a json object.
+            // Check http://stackoverflow.com/questions/2979922/how-to-convert-datatable-to-json-string-using-json-net for example
             return Newtonsoft.Json.JsonConvert.SerializeObject(new {
                 teamName = "IUS Skiing",
                 country = "Bosnia and Herzegovina"

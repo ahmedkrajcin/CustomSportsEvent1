@@ -19,5 +19,20 @@ namespace CustomSportsEvent1.Models
             StartTime = startTime;
             this.placeId = placeId;
         }
+
+        public Event()
+        {
+            // Empty constructor. We'll use it to get an access to the Model methods
+        }
+
+        public dynamic getSingleEvent(int id)
+        {
+            // Query the database and retrieve the item with the passed id. After that, take the data and create a json object.
+            return Newtonsoft.Json.JsonConvert.SerializeObject(new
+            {
+                eventName = "IUS Skiing",
+                country = "Bosnia and Herzegovina"
+            });
+        }
     }
 }
