@@ -134,6 +134,7 @@
     <Compile Include="Models\Place.cs" />
     <Compile Include="Models\Player.cs" />
     <Compile Include="Models\Skiing.cs" />
+    <Compile Include="Models\Team.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
