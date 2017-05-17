@@ -17,7 +17,7 @@ namespace CustomSportsEvent1.Models
         private int silverMedals { get; set; }
         private int bronzeMedals { get; set; }
 
-
+    
 
         public Player(string name, string surname, DateTime birthdate, string birthplace, string info, string address,int playerID, string playerType, int ranking, bool injured, int playerNumber, string carrier, int goldMedals, int silverMedals, int bronzeMedals):base(name, surname, birthdate, birthplace, info, address)
         {
