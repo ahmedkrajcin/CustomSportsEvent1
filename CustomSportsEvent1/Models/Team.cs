@@ -27,13 +27,16 @@ namespace CustomSportsEvent1.Models
         public string getAllTeams()
         {
             // Query the database and retrieve the all teams
-            return "team details";
+            return "";
         }
 
-        public string getSingleTeam(int id)
+        public dynamic getSingleTeam(int id)
         {
-            // Query the database and retrieve the team with this.id 
-            return "";
+            // Query the database and retrieve the item with the passed id. After that, take the data and create a json object.
+            return Newtonsoft.Json.JsonConvert.SerializeObject(new {
+                teamName = "IUS Skiing",
+                country = "Bosnia and Herzegovina"
+            });
         }
     }
 }

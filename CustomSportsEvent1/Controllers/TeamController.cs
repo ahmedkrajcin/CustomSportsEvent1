@@ -5,6 +5,8 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using CustomSportsEvent1.Models;
+using Newtonsoft.Json;
+
 namespace CustomSportsEvent1.Controllers
 {
     public class TeamController : ApiController
@@ -18,9 +20,10 @@ namespace CustomSportsEvent1.Controllers
         }
 
         // GET: api/Team/5
-        public string Get(int id)
+        public dynamic Get(int id)
         {
-            return team.getSingleTeam(id);
+            dynamic data = team.getSingleTeam(id);
+            return JsonConvert.DeserializeObject(data);
         }
 
         // POST: api/Team
