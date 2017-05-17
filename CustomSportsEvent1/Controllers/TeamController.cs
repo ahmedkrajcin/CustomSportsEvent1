@@ -10,18 +10,18 @@ using Newtonsoft.Json;
 namespace CustomSportsEvent1.Controllers
 {
     public class TeamController : ApiController
-    {
-        Team team = new Team();
-        
+    {        
         // GET: api/Team
         public string Get()
         {
-            return team.getAllTeams();
+            return "";
         }
 
         // GET: api/Team/5
         public dynamic Get(int id)
         {
+            Team team = new Team();
+
             dynamic data = team.getSingleTeam(id);
             return JsonConvert.DeserializeObject(data);
         }
