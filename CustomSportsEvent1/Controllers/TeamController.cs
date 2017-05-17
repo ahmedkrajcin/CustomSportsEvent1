@@ -5,36 +5,38 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using CustomSportsEvent1.Models;
-
 namespace CustomSportsEvent1.Controllers
-{   
-    public class EventController : ApiController
+{
+    public class TeamController : ApiController
     {
-        // GET: api/Event
-        public IEnumerable<string> Get()
+        Team team = new Team();
+        
+        // GET: api/Team
+        public string Get()
         {
-            return new string[] { "value1", "value2" };
+            return team.getAllTeams();
         }
 
-        // GET: api/Event/5
+        // GET: api/Team/5
         public string Get(int id)
         {
-            return "value";
+            return team.getSingleTeam(id);
         }
 
-        // POST: api/Event
+        // POST: api/Team
         public void Post([FromBody]string value)
         {
         }
 
-        // PUT: api/Event/5
+        // PUT: api/Team/5
         public void Put(int id, [FromBody]string value)
         {
         }
 
-        // DELETE: api/Event/5
+        // DELETE: api/Team/5
         public void Delete(int id)
         {
+
         }
     }
 }

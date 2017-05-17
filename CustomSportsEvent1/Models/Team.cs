@@ -19,5 +19,21 @@ namespace CustomSportsEvent1.Models
             this.teamName = teamName;
             this.country = country;
         }
+        public Team ()
+        {
+            // Empty constructor
+        }
+
+        public string getAllTeams()
+        {
+            // Query the database and retrieve the all teams
+            return "team details";
+        }
+
+        public string getSingleTeam(int id)
+        {
+            // Query the database and retrieve the team with this.id 
+            return "";
+        }
     }
 }
