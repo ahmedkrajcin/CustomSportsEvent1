@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -7,6 +9,10 @@ namespace CustomSportsEvent1.Models
 {
     public class Player:Person
     {
+        // Declare the database details
+        private const string connectionString = "server=sql8.freemysqlhosting.net;database=sql8174957;uid=sql8174957;pwd=C3Y3CcuXgu;";
+        MySqlConnection connection = new MySqlConnection(connectionString);
+
         private int playerID { get; set; }
         private String playerType { get; set; }
         private int ranking { get; set; }
@@ -28,6 +34,38 @@ namespace CustomSportsEvent1.Models
             this.goldMedals = goldMedals;
             this.silverMedals = silverMedals;
             this.bronzeMedals = bronzeMedals;
+        }
+
+        // Empty constructor
+        public Player()
+        {
+
+        }
+
+        public dynamic getAllPlayers()
+        {
+            string query = "SELECT player_firstname,player_lastname FROM Player;";
+
+            try
+            {
+                connection.Open();
+                //Create Command
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+
+                //Create a data reader and Execute the command
+                object result = cmd.ExecuteScalar();
+
+                string json = JsonConvert.SerializeObject(result, Formatting.Indented);
+                connection.Close();
+
+                return (json);
+                
+            }
+
+            catch (Exception ex)
+            {
+                return ("Connection failed");
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -7,6 +8,10 @@ namespace CustomSportsEvent1.Models
 {
     public class Team
     {
+        // Declare the database details
+        private const string connectionString = "server=sql8.freemysqlhosting.net;database=sql8174957;uid=sql8174957;pwd=C3Y3CcuXgu;";
+        MySqlConnection cnn = new MySqlConnection(connectionString);
+
         private int teamID { get; set; }
         private int size { get; set; }
         private String teamName { get; set; }
@@ -19,13 +24,28 @@ namespace CustomSportsEvent1.Models
             this.teamName = teamName;
             this.country = country;
         }
+
+        // Empty constructor
         public Team ()
         {
-            // Empty constructor
+           
         }
 
         public string getAllTeams()
         {
+            try
+            {
+                cnn.Open();
+                return ("connection opened successfully");
+                cnn.Close();
+            }
+
+            catch (Exception ex)
+            {
+                return ("Connection failed");
+                System.Diagnostics.Debug.WriteLine("The error occured");
+            }
+
             // Query the database and retrieve the all teams
             return "";
         }

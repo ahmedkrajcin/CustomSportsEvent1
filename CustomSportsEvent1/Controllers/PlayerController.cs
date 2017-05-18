@@ -5,14 +5,19 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using CustomSportsEvent1.Models;
+using Newtonsoft.Json;
+
 namespace CustomSportsEvent1.Controllers
 {
     public class PlayerController : ApiController
     {
         // GET: api/Player
-        public IEnumerable<string> Get()
+        public dynamic Get()
         {
-            return new string[] { "value1", "value2" };
+            Player player = new Player();
+
+            //dynamic data = player.getAllPlayers();
+            return player.getAllPlayers();
         }
 
         // GET: api/Player/5

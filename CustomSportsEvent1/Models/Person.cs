@@ -23,5 +23,10 @@ namespace CustomSportsEvent1.Models
             this.info = info;
             this.address = address;
         }
+
+        public Person()
+        {
+
+        }
     }
 }

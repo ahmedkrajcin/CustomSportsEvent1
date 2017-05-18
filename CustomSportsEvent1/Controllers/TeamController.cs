@@ -14,7 +14,9 @@ namespace CustomSportsEvent1.Controllers
         // GET: api/Team
         public string Get()
         {
-            return "";
+            Team team = new Team();
+            dynamic data = team.getAllTeams();
+            return data;
         }
 
         // GET: api/Team/5
