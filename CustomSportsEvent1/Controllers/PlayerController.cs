@@ -14,9 +14,10 @@ namespace CustomSportsEvent1.Controllers
         // GET: api/Player
         public dynamic Get()
         {
+            // Initialize and empty player object which will have an access to all Player model methods
             Player player = new Player();
 
-            //dynamic data = player.getAllPlayers();
+            // call getAllPlayers() method which consists of the required data 
             return player.getAllPlayers();
         }
 
