@@ -85,12 +85,5 @@ namespace CustomSportsEvent1.Models
                 return ("Connection failed");
             }
         }
-
-        public string DataTableToJsonWithJsonNet(DataTable table)
-        {
-            string jsonString = string.Empty;
-            jsonString = JsonConvert.SerializeObject(table);
-            return jsonString;
-        }
     }
 }
