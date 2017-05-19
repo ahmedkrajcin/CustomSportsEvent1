@@ -2,6 +2,8 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 // <author>Ahmed Krajcin</author>
@@ -44,7 +46,8 @@ namespace CustomSportsEvent1.Models
 
         public dynamic getAllPlayers()
         {
-            string query = "SELECT player_firstname,player_lastname FROM Player;";
+            string query = "SELECT * FROM Player;";
+            DataTable dt = new DataTable();
 
             try
             {
@@ -53,9 +56,11 @@ namespace CustomSportsEvent1.Models
                 MySqlCommand cmd = new MySqlCommand(query, connection);
 
                 //Create a data reader and Execute the command
-                object result = cmd.ExecuteScalar();
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                da.Fill(dt);
 
-                string json = JsonConvert.SerializeObject(result, Formatting.Indented);
+
+                string json = JsonConvert.SerializeObject(dt, Formatting.Indented);
                 connection.Close();
 
                 return (json);
@@ -66,6 +71,13 @@ namespace CustomSportsEvent1.Models
             {
                 return ("Connection failed");
             }
+        }
+
+        public string DataTableToJsonWithJsonNet(DataTable table)
+        {
+            string jsonString = string.Empty;
+            jsonString = JsonConvert.SerializeObject(table);
+            return jsonString;
         }
     }
 }
