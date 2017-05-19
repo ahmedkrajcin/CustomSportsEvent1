@@ -63,7 +63,8 @@ namespace CustomSportsEvent1.Models
                 string json = JsonConvert.SerializeObject(dt, Formatting.Indented);
                 connection.Close();
 
-                return (json);
+                var preparedJson = JsonConvert.DeserializeObject(json);
+                return (preparedJson);
                 
             }
 
