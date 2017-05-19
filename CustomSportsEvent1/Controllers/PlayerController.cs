@@ -24,7 +24,10 @@ namespace CustomSportsEvent1.Controllers
         // GET: api/Player/5
         public string Get(int id)
         {
-            return "value";
+            Player player = new Player();
+
+            dynamic data = player.getPlayerById(id);
+            return JsonConvert.DeserializeObject(data);
         }
 
         // POST: api/Player

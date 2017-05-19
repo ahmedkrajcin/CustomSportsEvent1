@@ -24,7 +24,7 @@ namespace CustomSportsEvent1.Controllers
         {
             Team team = new Team();
 
-            dynamic data = team.getSingleTeam(id);
+            dynamic data = team.getTeamById(id);
             return JsonConvert.DeserializeObject(data);
         }
 

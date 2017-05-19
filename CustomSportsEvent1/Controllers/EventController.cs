@@ -19,7 +19,10 @@ namespace CustomSportsEvent1.Controllers
         // GET: api/Event/5
         public string Get(int id)
         {
-            return "value";
+            Event event1 = new Event();
+
+            dynamic data = event1.getEventById(id);
+            return JsonConvert.DeserializeObject(data);
         }
 
         // POST: api/Event
