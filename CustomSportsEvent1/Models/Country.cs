@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using MySql.Data.MySqlClient;
+using System.Data;
+using Newtonsoft.Json;
 // <author>Ahmed Krajcin</author>
 namespace CustomSportsEvent1.Models
 {

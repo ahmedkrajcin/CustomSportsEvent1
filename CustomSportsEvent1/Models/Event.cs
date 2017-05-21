@@ -1,5 +1,8 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 // <author>Ahmed Krajcin</author>
@@ -26,10 +29,11 @@ namespace CustomSportsEvent1.Models
         {
             // Empty constructor. We'll use it to get an access to the Model methods
         }
+        
         public dynamic getAllEvents()
         {
             // Define the query this method will run
-            string query = "SELECT * FROM Event;";
+            string query = "SELECT * FROM Skiing;";
 
             // Initialize an empty DataTable object
             DataTable dt = new DataTable();
@@ -69,7 +73,7 @@ namespace CustomSportsEvent1.Models
         public dynamic getEventById(int id)
         {
             // Define the query this method will run
-            string query = "SELECT * FROM Event WHERE id=" + id + ";";
+            string query = "SELECT * FROM Skiing WHERE EventID=" + id + ";";
 
             // Initialize an empty DataTable object
             DataTable dt = new DataTable();

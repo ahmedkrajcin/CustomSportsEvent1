@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using MySql.Data.MySqlClient;
+using System.Data;
+using Newtonsoft.Json;
 // <author>Ahmed Krajcin</author>
 namespace CustomSportsEvent1.Models
 {
@@ -12,19 +15,20 @@ namespace CustomSportsEvent1.Models
         private int skiingID { get; set; }
         private String skiingType { get; set; }
         private int numberOfPlayers { get; set; }
-        private TimeSpan bestTime { get; set; }
+       
         private int lenghtOfTrack { get; set; }
-        private Player[][] playerList { get; set; }
-        private Player[][] rankingList { get; set; }
+        private int playerList { get; set; }
+        private int rankingList { get; set; }
+
+        public Skiing() { }
 
 
-
-        public Skiing(int eventID, DateTime date, TimeSpan startTime, Place placeId,int skiingID, string skiingType, int numberOfPlayers, TimeSpan bestTime, int lenghtOfTrack, Player[][] playerList, Player[][] rankingList) : base(eventID, date, startTime, placeId)
+        public Skiing(int eventID, DateTime date, TimeSpan startTime, Place placeId,int skiingID, string skiingType, int numberOfPlayers,  int lenghtOfTrack, int playerList, int rankingList) : base(eventID, date, startTime, placeId)
         {
             this.skiingID = skiingID;
             this.skiingType = skiingType;
             this.numberOfPlayers = numberOfPlayers;
-            this.bestTime = bestTime;
+            
             this.lenghtOfTrack = lenghtOfTrack;
             this.playerList = playerList;
             this.rankingList = rankingList;

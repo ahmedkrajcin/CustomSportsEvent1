@@ -5,24 +5,29 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using CustomSportsEvent1.Models;
+using Newtonsoft.Json;
 
 namespace CustomSportsEvent1.Controllers
 {   
     public class EventController : ApiController
     {
         // GET: api/Event
-        public IEnumerable<string> Get()
+        public dynamic Get()
         {
-            return new string[] { "value1", "value2" };
+            
+            Skiing event1 = new Skiing();
+
+          return event1.getAllSkiings();
+            //return JsonConvert.DeserializeObject(data);
         }
 
         // GET: api/Event/5
         public string Get(int id)
         {
-            Event event1 = new Event();
+            Skiing event1 = new Skiing();
 
-            dynamic data = event1.getEventById(id);
-            return JsonConvert.DeserializeObject(data);
+           return event1.getSkiingById(id);
+            //return JsonConvert.DeserializeObject(data);
         }
 
         // POST: api/Event

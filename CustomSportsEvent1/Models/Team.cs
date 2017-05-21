@@ -1,6 +1,8 @@
 ﻿using MySql.Data.MySqlClient;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 // <author>Ahmed Krajcin</author>
@@ -10,7 +12,7 @@ namespace CustomSportsEvent1.Models
     {
         // Declare the database details
         private const string connectionString = "server=sql8.freemysqlhosting.net;database=sql8174957;uid=sql8174957;pwd=C3Y3CcuXgu;";
-        MySqlConnection cnn = new MySqlConnection(connectionString);
+        MySqlConnection connection = new MySqlConnection(connectionString);
 
         private int teamID { get; set; }
         private int size { get; set; }
