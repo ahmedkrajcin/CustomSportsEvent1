@@ -17,15 +17,20 @@ namespace CustomSportsEvent1.Models
         private String type { get; set; }
         private String address { get; set; }
         private int maxAudience { get; set; }
+        private double latitude { get; set; }
+        private double longitude { get; set; }
 
-        public Place(int placeID, string placeName, string type, string address, int maxAudience)
+        public Place(int placeID, string placeName, string type, string address, int maxAudience,double latitude,double longitude)
         {
             this.placeID = placeID;
             this.placeName = placeName;
             this.type = type;
             this.address = address;
             this.maxAudience = maxAudience;
+            this.latitude = latitude;
+            this.longitude = longitude;
         }
+        public Place() { }
         public dynamic getAllPlaces()
         {
             // Define the query this method will run
@@ -69,7 +74,7 @@ namespace CustomSportsEvent1.Models
         public dynamic getPlaceById(int id)
         {
             // Define the query this method will run
-            string query = "SELECT * FROM Place WHERE id=" + id + ";";
+            string query = "SELECT * FROM Place WHERE PlaceId=" + id + ";";
 
             // Initialize an empty DataTable object
             DataTable dt = new DataTable();
