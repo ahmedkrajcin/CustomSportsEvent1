@@ -72,7 +72,7 @@ namespace CustomSportsEvent1.Models
         public dynamic getSkiingById(int id)
         {
             // Define the query this method will run
-            string query = "SELECT * FROM Skiing WHERE id=" + id + ";";
+            string query = "SELECT * FROM Skiing WHERE SkiingId=" + id + ";";
 
             // Initialize an empty DataTable object
             DataTable dt = new DataTable();

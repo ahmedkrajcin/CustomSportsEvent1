@@ -88,7 +88,7 @@ namespace CustomSportsEvent1.Models
         public dynamic getPlayerById(int id)
         {
             // Define the query this method will run
-            string query = "SELECT * FROM Player WHERE id=" + id + ";";
+            string query = "SELECT * FROM Player WHERE PlayerID=" + id + ";";
 
             // Initialize an empty DataTable object
             DataTable dt = new DataTable();
