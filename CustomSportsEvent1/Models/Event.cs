@@ -33,7 +33,8 @@ namespace CustomSportsEvent1.Models
         public dynamic getAllEvents()
         {
             // Define the query this method will run
-            string query = "SELECT * FROM Skiing;";
+            //string query = "SELECT * FROM Skiing;";
+            string query = "SELECT * FROM Skiing FULL OUTER JOIN Player ";
 
             // Initialize an empty DataTable object
             DataTable dt = new DataTable();
@@ -57,7 +58,7 @@ namespace CustomSportsEvent1.Models
 
                 // Convert previously created json data, into valid and formatted json data
                 var preparedJson = JsonConvert.DeserializeObject(json);
-
+                  
                 // Close the database connection
                 connection.Close();
 

@@ -14,6 +14,7 @@ namespace CustomSportsEvent1.Controllers
         {
 
             Place event1 = new Place();
+           
 
             return event1.getAllPlaces();
             //return JsonConvert.DeserializeObject(data);

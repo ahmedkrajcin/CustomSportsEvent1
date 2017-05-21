@@ -36,7 +36,9 @@ namespace CustomSportsEvent1.Models
         public dynamic getAllSkiings()
         {
             // Define the query this method will run
-            string query = "SELECT * FROM Skiing;";
+            //string query = "SELECT * FROM Skiing;";
+             
+           string query= " SELECT date, startTime, name, surname,flag FROM Skiing JOIN Player ON Skiing.skiingType = Player.playerType JOIN Country ON Player.countryId = Country.countryId";
 
             // Initialize an empty DataTable object
             DataTable dt = new DataTable();

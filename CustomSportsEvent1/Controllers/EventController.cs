@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Web.Http;
 using CustomSportsEvent1.Models;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace CustomSportsEvent1.Controllers
 {   
@@ -13,11 +14,12 @@ namespace CustomSportsEvent1.Controllers
     {
         // GET: api/Event
         public dynamic Get()
-        {
+        {Skiing event1 = new Skiing();
+            Player list = new Player();
+           
+           
             
-            Skiing event1 = new Skiing();
-
-          return event1.getAllSkiings();
+            return event1.getAllSkiings();
             //return JsonConvert.DeserializeObject(data);
         }
 
