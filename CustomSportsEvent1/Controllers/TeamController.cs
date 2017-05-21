@@ -12,7 +12,7 @@ namespace CustomSportsEvent1.Controllers
     public class TeamController : ApiController
     {        
         // GET: api/Team
-        public string Get()
+        public dynamic Get()
         {
             Team team = new Team();
             dynamic data = team.getAllTeams();
@@ -24,8 +24,8 @@ namespace CustomSportsEvent1.Controllers
         {
             Team team = new Team();
 
-            dynamic data = team.getTeamById(id);
-            return JsonConvert.DeserializeObject(data);
+            return team.getTeamById(id);
+            //return JsonConvert.DeserializeObject(data);
         }
 
         // POST: api/Team
