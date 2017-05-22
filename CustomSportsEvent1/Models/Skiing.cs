@@ -79,7 +79,7 @@ namespace CustomSportsEvent1.Models
         {
             // Define the query this method will run
             string query = "SELECT * FROM Skiing WHERE SkiingId=" + id + ";";
-            string query1 = "SELECT * FROM Player inner join Skiing ON Skiing.EventID="+id+" AND Skiing.skiingType=Player.playerType;";
+            string query1 = "SELECT playerID, name, surname,flag  FROM Player  join Skiing ON Skiing.EventID=" + id+ " AND Skiing.skiingType=Player.playerType JOIN Country ON Player.countryId = Country.countryId ;";
             // Initialize an empty DataTable object
             DataTable dt = new DataTable();
 
