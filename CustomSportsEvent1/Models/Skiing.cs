@@ -37,9 +37,9 @@ namespace CustomSportsEvent1.Models
         {
             // Define the query this method will run
             //string query = "SELECT * FROM Skiing;";
-             
-           string query= " SELECT date, startTime, name, surname,flag FROM Skiing JOIN Player ON Skiing.skiingType = Player.playerType JOIN Country ON Player.countryId = Country.countryId";
 
+            //string query= " SELECT EventId,date, startTime, placeId, name, surname,flag FROM Skiing JOIN Player ON Skiing.skiingType = Player.playerType JOIN Country ON Player.countryId = Country.countryId";
+            string query = " SELECT * FROM Skiing";
             // Initialize an empty DataTable object
             DataTable dt = new DataTable();
 
@@ -79,7 +79,7 @@ namespace CustomSportsEvent1.Models
         {
             // Define the query this method will run
             string query = "SELECT * FROM Skiing WHERE SkiingId=" + id + ";";
-
+            string query1 = "SELECT * FROM Player inner join Skiing ON Skiing.EventID="+id+" AND Skiing.skiingType=Player.playerType;";
             // Initialize an empty DataTable object
             DataTable dt = new DataTable();
 
@@ -90,12 +90,15 @@ namespace CustomSportsEvent1.Models
 
                 //Pass the query command, and selected database connection
                 MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlCommand cmd1 = new MySqlCommand(query1, connection);
 
                 //Create a data reader and Execute the command
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                MySqlDataAdapter da1 = new MySqlDataAdapter(cmd1);
 
                 // Fill the retrieved data from the database into earlier created dt DataTable
                 da.Fill(dt);
+                da1.Fill(dt);
 
                 // Convert the dataTable into a valid JSON format
                 string json = JsonConvert.SerializeObject(dt, Formatting.Indented);

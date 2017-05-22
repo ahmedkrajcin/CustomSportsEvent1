@@ -34,7 +34,7 @@ namespace CustomSportsEvent1.Models
         {
             // Define the query this method will run
             //string query = "SELECT * FROM Skiing;";
-            string query = "SELECT * FROM Skiing FULL OUTER JOIN Player ";
+            string query = "SELECT * FROM Skiing";
 
             // Initialize an empty DataTable object
             DataTable dt = new DataTable();
