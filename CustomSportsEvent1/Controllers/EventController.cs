@@ -15,7 +15,7 @@ namespace CustomSportsEvent1.Controllers
         // GET: api/Event
         public dynamic Get()
         {Skiing event1 = new Skiing();
-            Player list = new Player();
+            
            
            
             

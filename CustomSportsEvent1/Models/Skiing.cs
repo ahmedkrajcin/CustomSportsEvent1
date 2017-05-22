@@ -118,5 +118,31 @@ namespace CustomSportsEvent1.Models
                 return ("Connection failed");
             }
         }
+        public dynamic PostSkiingById(string json)
+        {
+            
+            var root = JsonConvert.DeserializeObject<RootObject>(json);
+            string query = "INSERT INTO ranikingList VALUES ("+root.person.playerId+","+root.person.result+");";
+            
+           
+            try
+            {
+                // Open the database connection
+                connection.Open();
+
+                //Pass the query command, and selected database connection
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+              
+                connection.Close();
+
+                return ("Succesifully Added");
+
+            }
+
+            catch (Exception ex)
+            {
+                return ("Connection failed");
+            }
+        }
     }
 }
