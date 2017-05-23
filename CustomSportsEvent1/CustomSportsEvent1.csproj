@@ -189,6 +189,7 @@
     <Compile Include="Controllers\EventController.cs" />
     <Compile Include="Controllers\PlaceController.cs" />
     <Compile Include="Controllers\PlayerController.cs" />
+    <Compile Include="Controllers\ResultController.cs" />
     <Compile Include="Controllers\TeamController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
