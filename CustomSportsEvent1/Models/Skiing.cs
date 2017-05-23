@@ -78,7 +78,7 @@ namespace CustomSportsEvent1.Models
         public dynamic getSkiingById(int id)
         {
             // Define the query this method will run
-            string query = "SELECT EventID , date, startTime, skiingType, numberOfPlayers, placeName FROM Skiing JOIN Place ON Skiing.PlaceId = Place.PlaceId WHERE EventID=" + id + ";";
+            string query = "SELECT EventID , date, startTime, skiingType, numberOfPlayers, placeName FROM Skiing JOIN Place ON Skiing.PlaceId = Place.PlaceId where EventID="+id+";";
 
            // string query = "SELECT * FROM Skiing WHERE EventID=" + id + ";";
             string query1 = "SELECT playerID, name, surname,flag  FROM Player  join Skiing ON Skiing.EventID=" + id+ " AND Skiing.skiingType=Player.playerType JOIN Country ON Player.countryId = Country.countryId ;";

@@ -14,7 +14,7 @@ namespace CustomSportsEvent1.Models
         public dynamic getResultById(int id)
     {
         // Define the query this method will run
-        string query = "SELECT time, name, surname, flag  FROM rankingList"+id+ " JOIN Player ON rankingList" + id + ".PlayerId=Player.PlayerID  JOIN Country ON Player.countryId=Country.countryId;";
+        string query = "SELECT playerNumber,time, name, surname, flag  FROM rankingList"+id+ " JOIN Player ON rankingList" + id + ".PlayerId=Player.PlayerID  JOIN Country ON Player.countryId=Country.countryId;";
 
         // Initialize an empty DataTable object
         DataTable dt = new DataTable();
