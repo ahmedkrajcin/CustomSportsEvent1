@@ -28,6 +28,8 @@ namespace CustomSportsEvent1.Controllers
         // POST: api/Result
         public void Post([FromBody]string value)
         {
+            Skiing object1 = new Skiing();
+            object1.PostSkiingById(value);
         }
 
         // PUT: api/Result/5
